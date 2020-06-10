@@ -56,3 +56,11 @@ html {
 .simon-button.blue {
   background-color: #2185D0;
 }
+
+.light-up {
+  filter:brightness(1.8);
+}
+
+.simon-button {
+  transition: filter 0.2s;
+}
