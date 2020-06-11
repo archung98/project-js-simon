@@ -43,6 +43,7 @@ html {
 
 .simon-button.green {
   background-color: #21BA45;
+  /*audio connect to greensound.wav*/
 }
 
 .simon-button.red {
@@ -64,3 +65,4 @@ html {
 .simon-button {
   transition: filter 0.2s;
 }
+
