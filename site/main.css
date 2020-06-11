@@ -22,7 +22,7 @@ html {
   margin: 20px auto;
   width:400px;
   height:400px;
-  background-color:#fff;
+  background-color:#0000;
   display:grid;
   grid-template-columns: 200px 200px;
   grid-row: auto auto;
