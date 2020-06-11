@@ -16,12 +16,15 @@
       <div class="simon-container">
         <script src = "buttons.js"></script>
         <script src = "sound.js"></script>
-        <div class="simon-button green" onmousedown="greensound.play()"></div>
-        <div class= "simon-button red" onmousedown="redsound.play()"></div>
-        <div class="simon-button yellow" onmousedown="yellowsound.play()"></div>
-        <div class="simon-button blue" onmousedown="bluesound.play()"></div>
-
+        
+        <div class="simon-button green" onmousedown="greensound.play()" onclick="clickcounter()"></div>
+        <div class= "simon-button red" onmousedown="redsound.play()" onclick="clickcounter()"></div>
+        <div class="simon-button yellow" onmousedown="yellowsound.play()" onclick="clickcounter()"></div>
+        <div class="simon-button blue" onmousedown="bluesound.play()" onclick="clickcounter()"></div>
       </div>
+      <script src = "simon.js"></script>
+      <h2>Number of Clicks: <a id="clicks">0</a></h2> <!--Only using a tag here so it is in the same line, nothing special-->
+      <h1 id =  "colortext"></h1>
     </section>
 
 
