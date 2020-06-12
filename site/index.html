@@ -17,21 +17,30 @@
         <script src = "buttons.js"></script>
         <script src = "sound.js"></script>
        <script src = "simon.js"></script>
+       <script>
+          $('.simon-button').on('mousedown', function(){
+            $(this).addClass('light-up')
+              })
+
+          $('.simon-button').on('mouseup', function(){
+            $(this).removeClass('light-up')
+                })
+       </script>
         
-        <div class="simon-button green" onmousedown="greensound.play()" onclick="clickcounter();handleResponse(simonData, 'green');" ></div>
-        <div class= "simon-button red" onmousedown="redsound.play()" onclick="clickcounter();handleResponse(simonData, 'red');"></div>
-        <div class="simon-button yellow" onmousedown="yellowsound.play()" onclick="clickcounter();handleResponse(simonData, 'yellow');"></div>
-        <div class="simon-button blue" onmousedown="bluesound.play()" onclick="clickcounter();handleResponse(simonData, 'blue');"></div>
-
-
+        <div class="simon-button green" onmousedown="greensound.play();"onclick="clickcounter();handleResponse(simonData, 'green');" ></div>
+        <div class= "simon-button red" onmousedown="redsound.play();" onclick="clickcounter();handleResponse(simonData, 'red');"></div>
+        <div class="simon-button yellow" onmousedown="yellowsound.play();" onclick="clickcounter();handleResponse(simonData, 'yellow');"></div>
+        <div class="simon-button blue" onmousedown="bluesound.play();" onclick="clickcounter();handleResponse(simonData, 'blue');"></div>
         
       </div>
 
       <script src = "simon.js"></script>
-        <button type="button" class="resetbutton" onclick = "resetcounter()">reset game</button>
+        <button type="reset" class="resetbutton" onclick = "resetcounter()">reset game</button>
 
+      <h2>Choose: <a id = "textcolor" onclick ="displayText(simonData)"> </a></h2>
       <h2>Number of Clicks: <a id="clicks">0</a></h2> <!--Only using a tag here so it is in the same line, nothing special-->
       <h2>Result: <a id = "result">START GAME</a></h2>
+
     </section>
 
 

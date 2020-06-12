@@ -8,13 +8,8 @@ function clickcounter(){
 function resetcounter() {
     counter = 0;
     document.getElementById("clicks").innerHTML = counter;
-
 }
 
-var color;
-function userred () {
-    document.getElementById("colorname").innerHTML = color;
-}
 
 /*
 var boo = TRUE;

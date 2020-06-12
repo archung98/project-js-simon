@@ -76,7 +76,7 @@ html {
 }
 
 .light-up {
-  filter:brightness(1.8);
+  filter: brightness(1.8);
 }
 
 .simon-button {
