@@ -3,26 +3,54 @@
 // $('.simon-button.green').on('mousedown', function() {
 //  $('.simon-button.green').addClass("light-up");
 // });
+// var colorSequence = ["red", "red", "green"];
+// var colorIndex = 0; 
+let simonData = {
+  colorSequence: ["red", "red", "green"],
+  colorIndex: 0,
+  active: true,
+}
+function isResponseCorrect(simonData, responseColor){
+  return simonData.colorSequence[simonData.colorIndex] === responseColor;
+}
+
+function nextColor(simonData){
+  simonData.colorIndex += 1;
+}
+function endGame(simonData){
+  simonData.active = false;
+}
+
+function isGameActive(simonData){
+  return simonData.active;
+}
+
+function handleResponse(simonData, responseColor){
+  if (isGameActive(simonData)){
+    if (isResponseCorrect(simonData, responseColor)){
+      nextColor(simonData);
+    } else {
+      endGame(simonData);
+    }
+  }
+}
 
 // //removing the class when mouse button is released
-// $('.simon-button.green').on('mouseup', function() {
-//   $('.simon-button.green').removeClass("light-up");
-//  });
+$('.simon-button.green').on('click', function() {
+  handleResponse(simonData, "green");
+ });
 
+$('.simon-button.blue').on('click', function() {
+  handleResponse(simonData, "blue");
+});
 
-// $('.simon-button.blue').on('click', function() {
-//   $('.simon-button.blue').addClass("light-up");
-// });
+$('.simon-button.yellow').on('click', function() {
+  handleResponse(simonData, "yellow");
+});
 
-// $('.simon-button.yellow').on('click', function() {
-//   //alert('You clicked the yellow button');
-//   $('.simon-button.yellow').addClass("light-up");
-// });
-
-// $('.simon-button.red').on('click', function() {
-//   //alert('You clicked the red button');
-//   $('.simon-button.red').addClass("light-up");
-// });
+$('.simon-button.red').on('click', function() {
+  handleResponse(simonData, "red");
+});
 
 //MUCH SIMPLER!!
 $('.simon-button').on('mousedown', function(){
