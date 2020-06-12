@@ -8,39 +8,51 @@
 let simonData = {
   colorSequence: ["red", "red", "green"],
   colorIndex: 0,
-  active: true,
+  active: TRUE,
+  length: 3,
 }
 function isResponseCorrect(simonData, responseColor){
-  return simonData.colorSequence[simonData.colorIndex] === responseColor;
-}
-
-function nextColor(simonData){
-  simonData.colorIndex += 1;
-}
-function endGame(simonData){
-  simonData.active = false; 
-  console.log("Failed");
-}
-
-function isGameActive(simonData){
-  return simonData.active;
-}
-
-function handleResponse(simonData, responseColor){
-  if (isGameActive(simonData)){
-    //if game is active
-    if (isResponseCorrect(simonData, responseColor)){
-      //if responsecolor is correct
-      nextColor(simonData);
-      //give next color 
-    } else {
-      //not correct, end game
-      endGame(simonData);
-
-    }
+  if (simonData.colorSequence[simonData.colorIndex] == responseColor) {
+    return TRUE;
+  } else {
+    return FALSE;
   }
 }
 
+function nextColor(simonData){
+  //update colorIndex
+  simonData.colorIndex += 1;
+}
+
+function failEndGame(simonData){
+  simonData.active = FALSE; 
+  document.getElementById("result").innerHTML = "fail, try again";
+}
+
+
+function handleResponse(simonData, responseColor){
+  //needs condition to succeed 
+ //document.getElementById("result").innerHTML = simonData.colorIndex;
+  while (simonData.colorIndex<simonData.length) {
+    while (simonData.active){
+      //if game is active
+      if (isResponseCorrect(simonData, responseColor)){
+        //if responsecolor is correct
+        document.getElementById("result").innerHTML = "o";
+        nextColor(simonData);
+        //give next color 
+      } else {
+        //not correct, end game
+        document.getElementById("result").innerHTML = "x";
+        failEndGame(simonData);
+      }
+    }
+  } 
+  //went through all iterations until simonData ended
+  //document.getElementById("result").innerHTML = "YOU WON";
+}
+
+/*
 // //removing the class when mouse button is released
 $('.simon-button.green').on('click', function() {
   handleResponse(simonData, "green");
@@ -57,6 +69,7 @@ $('.simon-button.yellow').on('click', function() {
 $('.simon-button.red').on('click', function() {
   handleResponse(simonData, "red");
 });
+*/
 
 //MUCH SIMPLER!!
 $('.simon-button').on('mousedown', function(){

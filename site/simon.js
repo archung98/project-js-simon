@@ -11,6 +11,11 @@ function resetcounter() {
 
 }
 
+var color;
+function userred () {
+    document.getElementById("colorname").innerHTML = color;
+}
+
 /*
 var boo = TRUE;
 var usercolor;
