@@ -18,7 +18,8 @@ function nextColor(simonData){
   simonData.colorIndex += 1;
 }
 function endGame(simonData){
-  simonData.active = false;
+  simonData.active = false; 
+  console.log("Failed");
 }
 
 function isGameActive(simonData){
@@ -27,10 +28,15 @@ function isGameActive(simonData){
 
 function handleResponse(simonData, responseColor){
   if (isGameActive(simonData)){
+    //if game is active
     if (isResponseCorrect(simonData, responseColor)){
+      //if responsecolor is correct
       nextColor(simonData);
+      //give next color 
     } else {
+      //not correct, end game
       endGame(simonData);
+
     }
   }
 }

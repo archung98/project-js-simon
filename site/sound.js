@@ -20,9 +20,13 @@ greenbleep.src = "greensound.wav";
 
 var bluesound = new Audio();
 bluesound.src  = "audio/bluesound.wav";
+bluesound.volume = 0.8;
 var greensound = new Audio();
 greensound.src = "audio/greensound.wav";
+greensound.volume = 0.3;
 var redsound = new Audio();
 redsound.src = "audio/redsound.wav";
+redsound.volume = 0.5;
 var yellowsound = new Audio();
 yellowsound.src = "audio/yellowsound.wav";
+yellowsound.volume = 0.5;

@@ -3,19 +3,36 @@
 
 }
 html {
-  background-color: #FCFCFC;
+  background: linear-gradient(-60deg, #f87777, #f8ec7b, #71d8fd, rgb(119, 250, 119));
+  background-size: 300% 300%;
+  animation: gradient 16s ease infinite;
   font-family: Arial;
   font-size: 18px;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
 #content {
-  width: 800px;
   margin: 0 auto;
 }
 
 #content h1 {
+  text-transform: uppercase;
+  line-height: 1;
   font-size: 3rem;
   text-align: center;
+  color: white;
+  text-shadow: 2px 2px 1px #333;
 }
 
 .simon-container {
@@ -66,3 +83,22 @@ html {
   transition: filter 0.2s;
 }
 
+.button{
+  border: 2px solid rgb(180, 81, 238);
+  background-color: white; 
+  color: rgb(77, 20, 110);
+  display: block;
+  font-size: 18px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width:90px;
+  height:30px;
+  position: absolute;
+  left: 43%;
+}
+
+.button:hover {
+  background-color: rgb(180, 81, 238);
+  color: white;
+}
