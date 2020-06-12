@@ -16,7 +16,7 @@
       <div class="simon-container">
         <script src = "buttons.js"></script>
         <script src = "sound.js"></script>
-        <script src = "simon.js"></script>
+       <script src = "simon.js"></script>
         
         <div class="simon-button green" onmousedown="greensound.play()" onclick="clickcounter()"></div>
         <div class= "simon-button red" onmousedown="redsound.play()" onclick="clickcounter()"></div>
@@ -28,8 +28,8 @@
       </div>
 
       <script src = "simon.js"></script>
-        <button class="button" onclick = "resetcounter()">reset game</button>
-        
+        <button type="button" class="resetbutton" onclick = "resetcounter()">reset game</button>
+
       <h2>Number of Clicks: <a id="clicks">0</a></h2> <!--Only using a tag here so it is in the same line, nothing special-->
       <h2>Result: <a id = "colortext">n/a</a></h2>
     </section>
